@@ -1,0 +1,7 @@
+<div *ngFor="let article of articleList">
+    <app-article-item
+      [article]="article"
+      (articleQuantityChange)="onArticleQuantityChange($event)"
+    ></app-article-item>
+  </div>
+  

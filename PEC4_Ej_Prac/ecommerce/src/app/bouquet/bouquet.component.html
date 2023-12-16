@@ -1,0 +1,13 @@
+<div *ngFor="let bouquet of bouquetList" [ngClass]="{'not-for-sale': !bouquet.isOnSale }">
+    <img [src]="bouquet.imageUrl" alt="{{bouquet.name}}" />
+    <figcaption>
+        <h2>{{bouquet.name}}</h2>
+        <p [ngClass]="{'not-for-sale-price': !bouquet.isOnSale }">{{bouquet.price}}</p>
+        <select *ngIf="bouquet.isOnSale">
+            <option *ngFor="let i of items" [value]="i">{{i}}</option>
+        </select>
+        <button (click)="incrementCounter(bouquet)" *ngIf="bouquet.isOnSale">+</button>
+        <span id="quantity" *ngIf="bouquet.isOnSale">{{bouquet.quantityInCart}}</span>
+        <button (click)="decrementCounter(bouquet)" *ngIf="bouquet.isOnSale" [disabled]="bouquet.quantityInCart === 0">-</button>
+    </figcaption>
+</div>

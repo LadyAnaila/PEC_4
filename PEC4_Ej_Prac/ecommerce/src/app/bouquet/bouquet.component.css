@@ -1,0 +1,24 @@
+
+.selected {
+    background-color: rgb(255, 204, 136);
+}
+
+
+.on-sale {
+    background-color: rgb(179, 255, 179);
+  }
+
+.not-for-sale {
+    background-color: lightgray; 
+  }
+  
+  .not-for-sale-price {
+    color: rgb(86, 86, 86); 
+  }
+  
+  .not-for-sale select,
+  .not-for-sale button,
+  .not-for-sale span {
+    display: none;
+  }
+  
